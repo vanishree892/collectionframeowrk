@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<h1>Welcome</h1>
+</head>
+<p id="demo"></p>
+<body>
+<script>
+	
+	var parser,dom,xmlDOC;
+	var text="<Bookstore><book>"+"<Title>AWS BOOK</Title>";+"<Price>45rs</Price>"+"</Book></Bookstore>"
+	parser=new DOMParser();
+	xmlDOC=parser.parseFromString(text,"text/xml");
+    document.getElementById("demo").innerHTML=xmlDOC.getElementsByTagName("Title")[0].childNodes[0].nodeValue;
+</script>
+</body>
+</html>
